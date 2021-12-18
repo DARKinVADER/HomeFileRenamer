@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using HomeFileRenamer.Exceptions;
-using HomeFileRenamer.Services;
+
+using HomeFileRenamer.Application.Exceptions;
+using HomeFileRenamer.Application.Services;
 
 using Xunit;
 

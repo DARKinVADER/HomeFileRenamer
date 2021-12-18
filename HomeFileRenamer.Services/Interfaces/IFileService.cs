@@ -1,7 +1,8 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
-namespace HomeFileRenamer.Services
+namespace HomeFileRenamer.Domain.Interfaces
 {
     public interface IFileService
     {

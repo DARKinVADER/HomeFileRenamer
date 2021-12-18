@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using HomeFileRenamer.Exceptions;
+﻿using System.Globalization;
 
-namespace HomeFileRenamer.Services
+using HomeFileRenamer.Application.Exceptions;
+using HomeFileRenamer.Domain.Interfaces;
+
+namespace HomeFileRenamer.Application.Services
 {
     public class FileService : IFileService
     {
@@ -29,7 +27,7 @@ namespace HomeFileRenamer.Services
             {
                 var dirPart = GetLastDirectoryInPath(t);
 
-                return GetDateFromDirectoryOrFileName(dirPart).Equals(GetDateFromDirectoryOrFileName((file)));
+                return GetDateFromDirectoryOrFileName(dirPart).Equals(GetDateFromDirectoryOrFileName(file));
             });
 
             if (dirName == null)

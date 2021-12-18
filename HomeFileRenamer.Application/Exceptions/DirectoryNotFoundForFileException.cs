@@ -1,6 +1,7 @@
-﻿using System;
+﻿
+using System;
 
-namespace HomeFileRenamer.Exceptions
+namespace HomeFileRenamer.Application.Exceptions
 {
     public class DirectoryNotFoundForFileException : Exception
     {

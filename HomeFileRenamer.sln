@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeFileRenamer", "HomeFileRenamer\HomeFileRenamer.csproj", "{41668998-A337-4F9C-A32D-DD4A86D1CBF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeFileRenamer.API", "HomeFileRenamer\HomeFileRenamer.API.csproj", "{41668998-A337-4F9C-A32D-DD4A86D1CBF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeFileRenamer.Test", "HomeFileRenamer.Test\HomeFileRenamer.Test.csproj", "{766A1BEA-CBB7-4BF7-AE67-41B0DCD4BBF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeFileRenamer.Test", "HomeFileRenamer.Test\HomeFileRenamer.Test.csproj", "{766A1BEA-CBB7-4BF7-AE67-41B0DCD4BBF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeFileRenamer.Domain", "HomeFileRenamer.Services\HomeFileRenamer.Domain.csproj", "{79B83883-ADCC-41CA-9BC2-7616D97826B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeFileRenamer.Application", "HomeFileRenamer.Application\HomeFileRenamer.Application.csproj", "{1D4E207C-F4BC-4967-B40F-814E3EC5982B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeFileRenamer.Console", "HomeFileRenamer.Console\HomeFileRenamer.Console.csproj", "{E1589309-5A63-4CCF-B101-4BD82CE8EFC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B93CFA84-D108-428F-9860-285707FAB750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,25 @@ Global
 		{766A1BEA-CBB7-4BF7-AE67-41B0DCD4BBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{766A1BEA-CBB7-4BF7-AE67-41B0DCD4BBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{766A1BEA-CBB7-4BF7-AE67-41B0DCD4BBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B83883-ADCC-41CA-9BC2-7616D97826B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B83883-ADCC-41CA-9BC2-7616D97826B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B83883-ADCC-41CA-9BC2-7616D97826B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B83883-ADCC-41CA-9BC2-7616D97826B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4E207C-F4BC-4967-B40F-814E3EC5982B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4E207C-F4BC-4967-B40F-814E3EC5982B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4E207C-F4BC-4967-B40F-814E3EC5982B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4E207C-F4BC-4967-B40F-814E3EC5982B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1589309-5A63-4CCF-B101-4BD82CE8EFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1589309-5A63-4CCF-B101-4BD82CE8EFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1589309-5A63-4CCF-B101-4BD82CE8EFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1589309-5A63-4CCF-B101-4BD82CE8EFC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41668998-A337-4F9C-A32D-DD4A86D1CBF2} = {B93CFA84-D108-428F-9860-285707FAB750}
+		{E1589309-5A63-4CCF-B101-4BD82CE8EFC4} = {B93CFA84-D108-428F-9860-285707FAB750}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F76BD251-A885-4717-B8EB-4501CE8E23D2}
