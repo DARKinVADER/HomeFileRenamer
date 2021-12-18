@@ -1,5 +1,5 @@
-using HomeFileRenamer.Application.Services;
-using HomeFileRenamer.Domain.Interfaces;
+
+using HomeFileRenamer.Application;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +25,7 @@ namespace HomeFileRenamer
             services.AddSwaggerDocument();
 
 #pragma warning Appplication referenciát megszüntetni
-            services.AddTransient<IFileService, FileService>();
+            services.AddAppServices();
 
         }
 

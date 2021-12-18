@@ -29,123 +29,123 @@ namespace HomeFileRenamer.Test
             Directory.Delete(TestPath, true);
         }
 
-        [Fact]
-        public void FileListTest()
-        {
-            List<string> tmpFiles = new List<string>();
+        //[Fact]
+        //public void FileListTest()
+        //{
+        //    List<string> tmpFiles = new List<string>();
 
-            for (int i = 0; i < 7; i++)
-            {
-                var file = Path.Combine(TestPath, Path.GetRandomFileName());
-                tmpFiles.Add(file);
-                using (FileStream fs = File.Create((file))) { }
-            }
+        //    for (int i = 0; i < 7; i++)
+        //    {
+        //        var file = Path.Combine(TestPath, Path.GetRandomFileName());
+        //        tmpFiles.Add(file);
+        //        using (FileStream fs = File.Create((file))) { }
+        //    }
 
-            List<string> fileList = fileService.GetFiles(TestPath);
+        //    List<string> fileList = fileService.GetFiles(TestPath);
 
-            fileList.Sort();
-            tmpFiles.Sort();
+        //    fileList.Sort();
+        //    tmpFiles.Sort();
 
-            Assert.True(fileList.SequenceEqual(tmpFiles));
-        }
+        //    Assert.True(fileList.SequenceEqual(tmpFiles));
+        //}
 
-        [Fact]
-        public void DirectoryListTest()
-        {
-            List<string> tmpDirectories = new List<string>();
+        //[Fact]
+        //public void DirectoryListTest()
+        //{
+        //    List<string> tmpDirectories = new List<string>();
 
-            for (int i = 0; i < 7; i++)
-            {
-                var directory = Path.Combine(TestPath, Path.GetRandomFileName());
-                tmpDirectories.Add(directory);
-                Directory.CreateDirectory(directory);
-            }
+        //    for (int i = 0; i < 7; i++)
+        //    {
+        //        var directory = Path.Combine(TestPath, Path.GetRandomFileName());
+        //        tmpDirectories.Add(directory);
+        //        Directory.CreateDirectory(directory);
+        //    }
 
-            List<string> directoryList = fileService.GetDirectories(TestPath);
+        //    List<string> directoryList = fileService.GetDirectories(TestPath);
 
-            tmpDirectories.Sort();
-            directoryList.Sort();
+        //    tmpDirectories.Sort();
+        //    directoryList.Sort();
 
-            Assert.True(directoryList.SequenceEqual(tmpDirectories));
-        }
+        //    Assert.True(directoryList.SequenceEqual(tmpDirectories));
+        //}
 
-        [Fact]
-        public void GetDirectoryForFileTest()
-        {
-            string file = "2019-07-20 10.33.55.mp4";
-            List<string> dirList = new List<string>()
-            {
-                @"X:\Video\2019\2019.07.18-20 - Timcsi és Dórika Sződön",
-                @"X:\Video\2019\2019.07.20 - Budakalász Vadaspark és Dínópark",
-                @"X:\Video\2019\2019.07.21 - Dórika, Timcsike, Matyi és Máté Vácon"
-            };
+        //[Fact]
+        //public void GetDirectoryForFileTest()
+        //{
+        //    string file = "2019-07-20 10.33.55.mp4";
+        //    List<string> dirList = new List<string>()
+        //    {
+        //        @"X:\Video\2019\2019.07.18-20 - Timcsi és Dórika Sződön",
+        //        @"X:\Video\2019\2019.07.20 - Budakalász Vadaspark és Dínópark",
+        //        @"X:\Video\2019\2019.07.21 - Dórika, Timcsike, Matyi és Máté Vácon"
+        //    };
 
-            string dirName = fileService.GetDirectoryForFile(file, dirList);
+        //    string dirName = fileService.GetDirectoryForFile(file, dirList);
 
-            Assert.Equal("2019.07.20 - Budakalász Vadaspark és Dínópark", dirName);
-        }
-        [Fact]
-        public void GetDirectoryForFileNotFoundTest()
-        {
-            string file = "2019-07-27 10.33.55.mp4";
-            List<string> dirList = new List<string>()
-            {
-                @"X:\Video\2019\2019.07.18-20 - Timcsi és Dórika Sződön",
-                @"X:\Video\2019\2019.07.20 - Budakalász Vadaspark és Dínópark",
-                @"X:\Video\2019\2019.07.21 - Dórika, Timcsike, Matyi és Máté Vácon"
-            };
+        //    Assert.Equal("2019.07.20 - Budakalász Vadaspark és Dínópark", dirName);
+        //}
+        //[Fact]
+        //public void GetDirectoryForFileNotFoundTest()
+        //{
+        //    string file = "2019-07-27 10.33.55.mp4";
+        //    List<string> dirList = new List<string>()
+        //    {
+        //        @"X:\Video\2019\2019.07.18-20 - Timcsi és Dórika Sződön",
+        //        @"X:\Video\2019\2019.07.20 - Budakalász Vadaspark és Dínópark",
+        //        @"X:\Video\2019\2019.07.21 - Dórika, Timcsike, Matyi és Máté Vácon"
+        //    };
 
-            Assert.Throws<DirectoryNotFoundForFileException>(() => fileService.GetDirectoryForFile(file, dirList));
-        }
+        //    Assert.Throws<DirectoryNotFoundForFileException>(() => fileService.GetDirectoryForFile(file, dirList));
+        //}
 
-        [Fact]
-        public void GetDateFromFileNameTest()
-        {
-            string file = "2019-07-20 10.33.55.mp4";
+        //[Fact]
+        //public void GetDateFromFileNameTest()
+        //{
+        //    string file = "2019-07-20 10.33.55.mp4";
 
-            DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
+        //    DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
 
-            Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 20)));
-        }
-        [Fact]
-        public void GetDateFromDirectoryNameTest()
-        {
-            string file = @"2019.07.20 - Budakalász Vadaspark és Dínópark\";
+        //    Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 20)));
+        //}
+        //[Fact]
+        //public void GetDateFromDirectoryNameTest()
+        //{
+        //    string file = @"2019.07.20 - Budakalász Vadaspark és Dínópark\";
 
-            DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
+        //    DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
 
-            Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 20)));
-        }
-        [Fact]
-        public void GetDateFromDirectoryWithDateRangeTest()
-        {
-            string file = @"2019.07.18-20 - Timcsi és Dórika Sződön\";
+        //    Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 20)));
+        //}
+        //[Fact]
+        //public void GetDateFromDirectoryWithDateRangeTest()
+        //{
+        //    string file = @"2019.07.18-20 - Timcsi és Dórika Sződön\";
 
-            DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
+        //    DateTime fileDateTime = fileService.GetDateFromDirectoryOrFileName(file);
 
-            Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 18)));
-        }
+        //    Assert.True(fileDateTime.Date.Equals(new DateTime(2019, 07, 18)));
+        //}
 
-        [Fact]
-        public void GetDescriptionFromDirNameTest()
-        {
-            string dirName = @"2019.07.18-20 - Timcsi és Dórika Sződön";
+        //[Fact]
+        //public void GetDescriptionFromDirNameTest()
+        //{
+        //    string dirName = @"2019.07.18-20 - Timcsi és Dórika Sződön";
 
-            string description = fileService.GetDescriptionFromDirName(dirName);
+        //    string description = fileService.GetDescriptionFromDirName(dirName);
 
-            Assert.Equal(@"Timcsi és Dórika Sződön", description);
-        }
+        //    Assert.Equal(@"Timcsi és Dórika Sződön", description);
+        //}
 
-        [Fact]
-        public void GetNewFileNameTest()
-        {
-            string file = "2019-07-20 10.33.55.mp4";
-            string dir = "2019.07.20 - Budakalász Vadaspark és Dínópark";
+        //[Fact]
+        //public void GetNewFileNameTest()
+        //{
+        //    string file = "2019-07-20 10.33.55.mp4";
+        //    string dir = "2019.07.20 - Budakalász Vadaspark és Dínópark";
 
-            string newFile = fileService.GetNewFileName(file, dir);
+        //    string newFile = fileService.GetNewFileName(file, dir);
 
-            Assert.Equal("2019-07-20 10.33.55 - Budakalász Vadaspark és Dínópark.mp4", newFile);
-        }
+        //    Assert.Equal("2019-07-20 10.33.55 - Budakalász Vadaspark és Dínópark.mp4", newFile);
+        //}
 
         [Fact]
         public void RenameFilesTest()
