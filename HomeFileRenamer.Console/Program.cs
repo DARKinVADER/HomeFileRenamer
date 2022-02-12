@@ -17,15 +17,6 @@ RenamerOptions options = new();
 
 using IHost host = CreateHostBuilder(args).Build();
 
-//Console.Write("Add meg az átnevezendő fájlok elérési útját:");
-//var sourceFilesPath = Console.ReadLine();
-
-//Console.Write("Add meg a könyvtárak elérési útját, amire átnevezzük a fájlokat:");
-//var directoriesWithNames = Console.ReadLine();
-
-//Console.Write("Testmód (y/n):");
-//var testMode = Console.ReadLine();
-
 var renamedFiles = fileService.RenameFiles(options.SourceFilesToRename, options.FoldersWithNames, options.TestRun);
 
 foreach (var file in renamedFiles)
@@ -52,5 +43,7 @@ IHostBuilder CreateHostBuilder(string[] args) =>
             Log.Debug($"SourceFilesToRename: {options.SourceFilesToRename}");
             Log.Debug($"FoldersWithNames: {options.FoldersWithNames}");
             if (options.TestRun)
+            {
                 Log.Debug($"!!!!!!!!!!!!!!TESTRUN!!!!!!!!!!!!!!!!");
+            }
         });

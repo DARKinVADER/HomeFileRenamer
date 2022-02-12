@@ -98,7 +98,6 @@ namespace HomeFileRenamer.Application.Services
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    throw;
                 }
             }
 
